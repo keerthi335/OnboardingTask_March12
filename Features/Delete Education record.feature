@@ -1,11 +1,8 @@
 ﻿Feature: Delete Education record
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
-
+	This feature is to verify the Delete functionality of existing education record in the Profile page of skillswap.pro
+	
 @mytag
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+Scenario: Deleting the existing education record
+	Given User navigated to the education tab of profile page of skillswap.pro and a education record exists
+	When User Clicks Delete button 
+	Then the education record should be deleted.

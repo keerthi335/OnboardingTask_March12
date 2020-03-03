@@ -1,0 +1,11 @@
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\bin\Debug\Mars QA.exe.config
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\bin\Debug\Mars QA.exe
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\bin\Debug\Mars QA.pdb
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\bin\Debug\WebDriver.dll
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\bin\Debug\WebDriver.xml
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\obj\Debug\Mars_QA.csprojAssemblyReference.cache
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\obj\Debug\Mars_QA.csproj.CopyComplete
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\obj\Debug\Mars QA.exe
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\obj\Debug\Mars QA.pdb
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\bin\Debug\WebDriver.Support.dll
+C:\Users\kranthi\source\repos\Mars QA\Mars QA\bin\Debug\WebDriver.Support.xml

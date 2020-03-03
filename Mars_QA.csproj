@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,19 +37,66 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomePage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\Add New Cerfications_From.feature" />
+    <None Include="Features\Add New Certifications.feature" />
+    <None Include="Features\Add New Certifications_Award.feature" />
+    <None Include="Features\Add New Education.feature" />
+    <None Include="Features\Add New Edu_College Field Validation.feature" />
+    <None Include="Features\Add New Edu_Field Validations.feature" />
+    <None Include="Features\Add New Lang.feature" />
+    <None Include="Features\Add New Lang_Lang Field Validations.feature" />
+    <None Include="Features\Add New Lang_Level Field Validations.feature" />
+    <None Include="Features\Add New Skill.feature" />
+    <None Include="Features\Add New Skill_Skill Field Validations.feature" />
+    <None Include="Features\Delete Certificate.feature" />
+    <None Include="Features\Delete Education record.feature" />
+    <None Include="Features\Delete Language record.feature" />
+    <None Include="Features\Delete Skill record.feature" />
+    <None Include="Features\Edit Certificate.feature" />
+    <None Include="Features\Edit Education.feature" />
+    <None Include="Features\Edit Language.feature" />
+    <None Include="Features\Edit Lang_Level.feature" />
+    <None Include="Features\Edit Skill.feature" />
+    <None Include="Features\Edit Skill_Level.feature" />
+    <None Include="Features\Login.feature" />
+    <None Include="Features\Login_Field Validations.feature" />
+    <None Include="Features\Login_Forgot Password.feature" />
+    <None Include="Features\New Account Registration.feature" />
+    <None Include="Features\New Account_Field Validations.feature" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="Step Definations\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.79.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
+  </Target>
 </Project>
