@@ -44,7 +44,10 @@ namespace Mars_QA
             //home.AddLevel(driver);
 
             //Third Testcase - Editing Skill
-            home.EditSkill(driver);
+            //home.EditSkill(driver);
+
+            //Fourth Testcase - Deleting Education record
+            home.DeleteEdu(driver);
          }
     }
 }

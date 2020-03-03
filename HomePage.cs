@@ -52,6 +52,19 @@ namespace Mars_QA
             driver.FindElement(By.XPath("//input[contains(@value,'Add')]")).Click();
         }
 
+        internal void DeleteEdu(IWebDriver driver)
+        {
+            WebDriverWait wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+
+            //Clicking on Skill tab
+            IWebElement Edutab = wait2.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@data-tab='third']")));
+            Edutab.Click();
+
+            IWebElement Delbutton = wait2.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@data-tab='third']//i[@class='remove icon']")));
+            Delbutton.Click();
+
+        }
+
         internal void EditSkill(IWebDriver driver)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
