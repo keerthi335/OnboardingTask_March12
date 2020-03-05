@@ -4,12 +4,12 @@ using System;
 
 namespace Mars_QA
 {
-    internal class HomePage
+    public class HomePage
     {
         internal void Addlang(IWebDriver driver)
         {
             //Wait until the Addnew button and Click the Add New button to add language 
-           
+
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
             IWebElement addnew = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//form[@class='ui form']/div[2]/div/div[2]/div/table/thead/tr/th[3]/div")));
@@ -19,15 +19,21 @@ namespace Mars_QA
             IWebElement addlang = driver.FindElement(By.Name("name"));
             addlang.SendKeys("English");
 
-            //Identifying the level webelement and selecting its value as Fluent from dropdown
+            //Identifying the level webelement and selecting its value as Basic from dropdown
             IWebElement LevelDropDownBox = driver.FindElement(By.Name("level"));
             SelectElement level = new SelectElement(LevelDropDownBox);
-            level.SelectByText("Fluent");
+            level.SelectByText("Basic");
+        }
 
+        internal void ClickAdd(IWebDriver driver)
+        {
             //Clicking Add Button
             driver.FindElement(By.XPath("//input[contains(@value,'Add')]")).Click();
-
         }
+
+            
+
+        
 
         internal void AddLevel(IWebDriver driver)
         {
@@ -52,41 +58,57 @@ namespace Mars_QA
             driver.FindElement(By.XPath("//input[contains(@value,'Add')]")).Click();
         }
 
-        internal void DeleteEdu(IWebDriver driver)
+        internal void ClickDel(IWebDriver driver)
         {
             WebDriverWait wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
-            //Clicking on Skill tab
-            IWebElement Edutab = wait2.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@data-tab='third']")));
-            Edutab.Click();
-
+            //Clicking Delete Button
             IWebElement Delbutton = wait2.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@data-tab='third']//i[@class='remove icon']")));
             Delbutton.Click();
 
         }
-
-        internal void EditSkill(IWebDriver driver)
+        internal void ClickEdu(IWebDriver driver)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            WebDriverWait wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+
+            //Clicking on Education tab
+            IWebElement Edutab = wait2.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@data-tab='third']")));
+            Edutab.Click();
+        }
+
+        internal void ClickUpdate(IWebDriver driver)
+        {
+
+            driver.FindElement(By.XPath("//input[contains(@value,'Update')]")).Click();
+
+            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
             //Clicking on Skill tab
-            IWebElement skilltab = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@data-tab='second']")));
-            skilltab.Click();
+            //IWebElement skilltab = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@data-tab='second']")));
+            //skilltab.Click();
+
+            
+        }
+
+         internal void EditSkill(IWebDriver driver)
+         {
 
             //Identifying the Clicking on Edit button corresponding to dancing.
             WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
             //Clicking on Edit button
             IWebElement Editbutton = wait1.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@data-tab='second']//i[@class='outline write icon']")));
-            Editbutton.Click();  
-            
+            Editbutton.Click();
+
             //Identifying dancing skill and replacing it with singing
             //IWebElement newskill = driver.FindElement(By.XPath("//input[text()='dancing']"));
             IWebElement newskill = driver.FindElement(By.XPath("//input[@placeholder='Add Skill']"));
             newskill.Clear();
             newskill.SendKeys("singing");
 
-            driver.FindElement(By.XPath("//input[contains(@value,'Update')]")).Click();
-        }
+            // driver.FindElement(By.XPath("//input[contains(@value,'Update')]")).Click();
+         }
+          
+        
     }
 }

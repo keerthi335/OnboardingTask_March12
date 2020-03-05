@@ -32,22 +32,22 @@ Scenario: Duplicating the record
 	When clicks the Update button
 	Then error message should be displayed stating that record already exists.
 
-Scenario: Checking the invalid text for College/University name
+Scenario: Checking the invalid text (spaces) for College/University name
 	Given User navigated to education tab of profile page of skillswap.pro and a education record exists
 	When User Clicks Edit button and changed the values of College/University name to spaces
 	Then error message should be displayed stating that College/University name is invalid.
 
-Scenario: Checking the invalid text for College/University name
+Scenario: Checking the invalid text(numbers) for College/University name
 	Given User navigated to education tab of profile page of skillswap.pro and a education record exists
 	When User Clicks Edit button and changed the values of College/University name to numbers
 	Then error message should be displayed stating that College/University name is invalid.
 
-Scenario: Checking the invalid text for College/University name
+Scenario: Checking the invalid text(special characters) for College/University name
 	Given User navigated to education tab of profile page of skillswap.pro and a education record exists
 	When User Clicks Edit button and changed the values of College/University name to special characters
 	Then error message should be displayed stating that College/University name is invalid.
 
-Scenario: Checking the invalid text for College/University name
+Scenario: Checking the invalid text(blank) for College/University name
 	Given User navigated to education tab of profile page of skillswap.pro and a education record exists
 	When User Clicks Edit button and changed the values of College/University name to blank
 	And Clicks Add button

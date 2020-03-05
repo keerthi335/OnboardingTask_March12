@@ -8,7 +8,7 @@ Scenario: Updating the Language
 	When clicks the Update button
 	Then the language record should be updated with new language.
 
-Scenario: Updating the Language
+Scenario: Canceling the update of the Language
 	Given User navigated to the profile page of skillswap.pro and a language record exists
 	And User Clicks Edit button and changed the language to another valid text which does not exists in the user profile
 	When clicks the Cancel button
@@ -19,44 +19,44 @@ Scenario: Checking for duplicate record
 	When User Clicks Edit button and changed the language to another language which exists in the user profile
 	Then error message should be displayed stating that language record already exists.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text (spaces)
 	Given User navigated to the profile page of skillswap.pro and a language record exists
 	When User Clicks Edit button and changed the language to spaces
 	Then error message should be displayed stating the language is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text (special characters)
 	Given User navigated to the profile page of skillswap.pro and a language record exists
 	When User Clicks Edit button and changed the language to special characters
 	Then error message should be displayed stating the language is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text(numbers)
 	Given User navigated to the profile page of skillswap.pro and a language record exists
 	When User Clicks Edit button and changed the language to numbers
 	Then error message should be displayed stating the language is invalid.
 
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text(text containing spaces)
 	Given User navigated to the profile page of skillswap.pro and a language record exists
 	When User Clicks Edit button and changed the language to text containing spaces
 	Then error message should be displayed stating the language is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text(text containing special characters)
 	Given User navigated to the profile page of skillswap.pro and a language record exists
-	When User Clicks Edit button and changed the language to text containing  special characters
+	When User Clicks Edit button and changed the language to text containing special characters
 	Then error message should be displayed stating the language is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text (text containing numbers)
 	Given User navigated to the profile page of skillswap.pro and a language record exists
-	When User Clicks Edit button and changed the language to text containing  numbers
+	When User Clicks Edit button and changed the language to text containing numbers
 	Then error message should be displayed stating the language is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text with blank
 	Given User navigated to the profile page of skillswap.pro and a language record exists
 	When User Clicks Edit button and deleted the text in language and did not enter anything
 	And User Clicks Update button
 	Then error message should be displayed stating the language is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Canceling the update of record with blank
 	Given User navigated to the profile page of skillswap.pro and a language record exists
 	When User Clicks Edit button and deleted the text in language and did not enter anything
 	And User Clicks Cancel button

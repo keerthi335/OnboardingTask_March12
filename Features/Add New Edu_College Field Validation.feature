@@ -3,38 +3,38 @@
 
 @mytag
 
-Scenario: Validate the College/University Name  field
+Scenario: Validate the College/University Name field with numbers
 	Given user navigated to form to add the new education in profile page of skillswap.pro
 	When Enters numbers in "College/University Name " element 
 	Then error message should be displayed stating that the education entered is invalid.
 
-Scenario: Validate the College/University Name  field
+Scenario: Validate the College/University Name field with special characters
 	Given user navigated to form to add the new education in profile page of skillswap.pro
 	When Enters special characters in "College/University Name " element 
 	Then error message should be displayed stating that the education entered is invalid.
 
-Scenario: Validate the College/University Name  field 
+Scenario: Validate the College/University Name field with text containing spaces
 	Given user navigated to form to add the new education in profile page of skillswap.pro
 	When Enters text containing numbers in "College/University Name " element
 	Then error message should be displayed stating that the education entered is invalid.
 
-Scenario: Validate the College/University Name  field
+Scenario: Validate the College/University Name field with text containing special characters
 	Given user navigated to form to add the new education in profile page of skillswap.pro
 	When Enters text containing special characters in "College/University Name " element
 	Then error message should be displayed stating that the education entered is invalid.
 
-Scenario: Validate the College/University Name  field 
+Scenario: Validate the College/University Name field with spaces
 	Given user navigated to form to add the new education in profile page of skillswap.pro
 	When Enters spaces in "College/University Name " element
 	Then error message should be displayed stating that the education entered is invalid.
 
-Scenario: Validate the College/University Name  field 
+Scenario: Validate the College/University Name field with blank
 	Given user navigated to form to add the new education in profile page of skillswap.pro
 	When Enters blank in "College/University Name " element and valid values for remaining fields
 	And clicks Add button
 	Then error message should be displayed stating that the College/University Name should not be blank.
 
-Scenario: Validate the College/University Name  field 
+Scenario: Verify the cancel button of Add college/university 
 	Given user navigated to form to add the new education in profile page of skillswap.pro
 	When Enters blank in "College/University Name " element and valid values for remaining fields
 	And clicks Cancel button

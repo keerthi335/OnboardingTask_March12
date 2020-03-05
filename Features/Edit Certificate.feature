@@ -8,7 +8,7 @@ Scenario: Updating the Certificate
 	When clicks the Update button
 	Then the certificate record should be updated with new certificate.
 
-Scenario: Updating the Certificate
+Scenario: Canceling the update the Certificate
 	Given User navigated to certificate tab of profile page of skillswap.pro and a certificate record exists
 	And User Clicks Edit button and changed the certificate to another valid text which does not exists in the profile
 	When clicks the Cancel button
@@ -20,22 +20,22 @@ Scenario: Checking for duplicate record
 	And clicks the Update button
 	Then the certificate record already exists in the database
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text (spaces)
 	Given User navigated to certificate tab of profile page of skillswap.pro and a certificate record exists
 	When User Clicks Edit button and changed the values of Certificate to spaces
 	Then error message should be displayed stating the certificate is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text (numbers)
 	Given User navigated to certificate tab of profile page of skillswap.pro and a certificate record exists
 	When User Clicks Edit button and changed the values of Certificate to numbers
 	Then error message should be displayed stating the certificate is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text (special characters)
 	Given User navigated to certificate tab of profile page of skillswap.pro and a certificate record exists
 	When User Clicks Edit button and changed the values of Certificate to special characters
 	Then error message should be displayed stating the certificate is invalid.
 
-Scenario: Checking the invalid text
+Scenario: Checking the invalid text(blank)
 	Given User navigated to certificate tab of profile page of skillswap.pro and a certificate record exists
 	When User Clicks Edit button and changed the values of Certificate to blank
 	And Clicks Add button
