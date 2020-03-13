@@ -63,8 +63,8 @@ namespace Mars_QA
             WebDriverWait wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
             //Clicking Delete Button
-            IWebElement Delbutton = wait2.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@data-tab='third']//i[@class='remove icon']")));
-            Delbutton.Click();
+            IWebElement DelRecord = wait2.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//td[text()='M.Tech']/following-sibling::td//i[@class='remove icon']")));
+            DelRecord.Click();
 
         }
         internal void ClickEdu(IWebDriver driver)
@@ -73,7 +73,7 @@ namespace Mars_QA
 
             //Clicking on Education tab
             IWebElement Edutab = wait2.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//a[@data-tab='third']")));
-            Edutab.Click();
+            Edutab.Click();            
         }
 
         internal void ClickUpdate(IWebDriver driver)
@@ -97,7 +97,8 @@ namespace Mars_QA
             WebDriverWait wait1 = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
 
             //Clicking on Edit button
-            IWebElement Editbutton = wait1.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@data-tab='second']//i[@class='outline write icon']")));
+            //IWebElement Editbutton = wait1.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@data-tab='second']//i[@class='outline write icon']")));
+            IWebElement Editbutton = wait1.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//td[text()='dancing']/following-sibling::td//i[@class='outline write icon']")));
             Editbutton.Click();
 
             //Identifying dancing skill and replacing it with singing

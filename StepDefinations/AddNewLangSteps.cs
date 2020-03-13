@@ -1,5 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using TechTalk.SpecFlow;
 
@@ -34,7 +36,9 @@ namespace Mars_QA.StepDefinations
         [Then(@"the entered record should be added successfully and displayed in the same page")]
         public void ThenTheEnteredRecordShouldBeAddedSuccessfullyAndDisplayedInTheSamePage()
         {
-
+            driver.Navigate().Refresh(); 
+            IWebElement Addedlang = driver.FindElement(By.XPath("//td[text()='English']"));
+            Assert.AreEqual("English", Addedlang.Text);
         }
     }
 }

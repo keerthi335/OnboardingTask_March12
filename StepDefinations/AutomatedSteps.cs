@@ -1,7 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace Mars_QA
@@ -57,13 +60,35 @@ namespace Mars_QA
         [Then(@"the skill record should be updated with new skill")]
         public void ThenTheSkillRecordShouldBeUpdatedWithNewSkill()
         {
+            driver.Navigate().Refresh();
+
            
+            driver.FindElement(By.XPath("//a[@data-tab='second']")).Click();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+            IWebElement UpdatedSkill = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//td[text()='singing']"))));
+            Assert.AreEqual("singing", UpdatedSkill.Text);
         }
         
         [Then(@"the education record should be deleted\.")]
         public void ThenTheEducationRecordShouldBeDeleted_()
         {
-            
+            driver.Navigate().Refresh();
+            driver.FindElement(By.XPath("//a[@data-tab='third']")).Click();
+            //IWebElement DeletedRec = driver.FindElement(By.XPath("//td[text()='M.Tech']"));
+            //Assert.IsNull(DeletedRec);
+
+
+            try
+            {
+               WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+                wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//td[text()='M.Tech']"))));
+                Assert.Fail();
+            }
+            catch
+            {
+                Assert.Pass();
+            }
+
         }
     }
 }
